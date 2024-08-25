@@ -1,36 +1,36 @@
 version: '3.8'
 
-services:
-  db:
-    build:
-      context: ./db
-    environment:
-      POSTGRES_PASSWORD: your_password
-      POSTGRES_DB: my_database
-    ports:
-      - "5432:5432"
-    healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U postgres']
-      interval: 10s
-      timeout: 5s
-      retries: 5
-    networks:
-      - my_network
-
-  python:
-    build:
-      context: ./python
-    depends_on:
+    services:
       db:
-        condition: service_healthy
-    environment:
-      DB_HOST: db
-      DB_PORT: 5432
-      DB_NAME: my_database
-      DB_USER: postgres
-      DB_PASSWORD: your_password
-    networks:
-      - my_network
+        build:
+          context: ./db
+        environment:
+          POSTGRES_PASSWORD: your_password
+          POSTGRES_DB: my_database
+        ports:
+          - "5432:5432"
+        healthcheck:
+          test: ['CMD-SHELL', 'pg_isready -U postgres']
+          interval: 10s
+          timeout: 5s
+          retries: 5
+        networks:
+          - my_network
 
-networks:
-  my_network:
+      python:
+        build:
+          context: ./python
+        depends_on:
+          db:
+            condition: service_healthy
+        environment:
+          DB_HOST: db
+          DB_PORT: 5432
+          DB_NAME: my_database
+          DB_USER: postgres
+          DB_PASSWORD: your_password
+        networks:
+          - my_network
+
+    networks:
+      my_network:
