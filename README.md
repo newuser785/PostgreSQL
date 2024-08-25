@@ -25,11 +25,13 @@ This repository demonstrates how to set up a PostgreSQL database and a Python ap
 Clone this repository to your local machine:
 
 git clone https://github.com/newuser785/PostgreSQL.git
+
 cd PostgreSQL
 
 Build and run the Docker containers:
 
 docker-compose down -v
+
 docker-compose up --build
 
 ## Notes
