@@ -8,7 +8,6 @@ This repository demonstrates how to set up a PostgreSQL database and a Python ap
 
 │   ├── init.sql
 
-│
 ├── python/
 
 │   ├── Dockerfile
