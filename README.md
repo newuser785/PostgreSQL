@@ -16,9 +16,9 @@ This repository demonstrates how to set up a PostgreSQL database and a Python ap
 
 │   ├── requirements.txt
 
-├── docker-compose.yml
-
 ├── README.md
+
+├── docker-compose.yml
 
 ├── docker.png
 
