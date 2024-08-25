@@ -1,5 +1,6 @@
-   import psycopg2
+import psycopg2
 import time
+
 
 def fetch_age_ranges():
     time.sleep(30)  # Ждем 30 секунд, чтобы база данных успела подняться
@@ -27,6 +28,7 @@ def fetch_age_ranges():
             cursor.close()
         if 'conn' in locals():
             conn.close()
+
 
 if __name__ == "__main__":
     fetch_age_ranges()
