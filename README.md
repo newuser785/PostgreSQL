@@ -3,16 +3,26 @@ This repository demonstrates how to set up a PostgreSQL database and a Python ap
 ## Project Structure
 
 ├── db/
+
 │   ├── Dockerfile
+
 │   ├── init.sql
+
 │
 ├── python/
+
 │   ├── Dockerfile
+
 │   ├── main.py
+
 │   ├── requirements.txt
+
 ├── docker-compose.yml
+
 ├── README.md
+
 ├── docker.png
+
 ├── terminal.png
 
 - db/: Contains the Dockerfile and init.sql to set up the PostgreSQL database.
